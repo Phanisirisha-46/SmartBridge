@@ -1,26 +1,26 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import './App.css';
 import {createBrowserRouter,RouterProvider} from "react-router-dom" ;
-import { Link } from 'react-router-dom';
-import RootLayout from './RootLayout';
+// import { Link } from 'react-router-dom';
+// import RootLayout from './RootLayout';
 import RoutingError from './components/RoutingError'; 
-import Home from './components/Home/Home';
+import Login from './components/Login/Login';
 
 function App() {
   
   const browserRouter= createBrowserRouter([
     {
       path:'',
-      element:<RootLayout/>,
+      element:<Login/>,
       errorElement:<RoutingError/>,
       
-    children:[
-      {
-        path:'/home',
-        element:<Home/>,
-      },
+    // children:[
+    //   {
+    //     path:'/',
+    //     element:<Home/>,
+    //   },
       
-    ]
+    // ]
   }
   
   ])

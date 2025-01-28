@@ -7,7 +7,7 @@ function RootLayout() {
   return (
     <div>
         <Header/>
-          <h4 className="heading-prawn">Aquaculture - Prawn</h4>
+          <h4 className="heading">Smart-Bridge</h4>
             <div style={{minHeight:"57.5vh"}} className='container'> 
                 <Outlet/>
             </div>
