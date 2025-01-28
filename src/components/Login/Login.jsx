@@ -55,7 +55,7 @@ const Login = () => {
           ) : (
             <>
               <h3>New here?</h3>
-              <p>Sign up and join our community!</p>
+              <p>Sign up and join the community!</p>
             </>
           )}
           <button className="img__btn" onClick={toggleSignUp}>
