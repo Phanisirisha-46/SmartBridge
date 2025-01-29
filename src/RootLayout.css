@@ -1,19 +1,51 @@
-.heading{
-    text-align: center;
-    margin-top: 30px;
-    border: 2px solid black;
-    width: 250px;
-    margin-left:  30px;
-    margin-right: auto;
-    background-color: rgb(244, 246, 248);
-    border-radius: 25px;
-    padding: 10px;
-    color: var(--medium-dark);
-    box-shadow: 2px 3px 4px whitesmoke;
-    transition: transform 0.3s ease;
+/* Center the button in the middle of the page */
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+/* Style for the login button */
+.login-button {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  background-color:  #052d56;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Button hover effect */
+.login-button:hover {
+  background-color: #0056b3;
+}
+
+/* Media Queries */
+
+/* For screens smaller than 768px (e.g., tablets, mobile phones) */
+@media (max-width: 768px) {
+  .login-button {
+    position:relative;
+    width:150px;
+    top:10px;
+    padding:10px;
+    font-size: 1rem;
   }
-  
-  .heading:hover {
-    transform: scale(1.1);
+}
+
+/* For screens smaller than 480px (e.g., mobile phones) */
+@media (max-width: 480px) {
+  .login-button {
+    width:150px;
+    top:10px;
+    padding:10px;
+    font-size: 0.9rem;
   }
-  
+}

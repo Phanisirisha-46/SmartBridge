@@ -1,153 +1,178 @@
-/* Global Styles */
-body {
-    font-family: "Poppins", sans-serif;
-    background: #eae6e6;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
-  }
-  
-  /* Main Container */
-  .cont {
-    position: relative;
-    width: 800px;
-    height: 500px;
-    background: #ffffff;
-    border-radius: 10px;
-    box-shadow: 20px 20px 20px rgba(0, 0, 0.2, 0.2);
-    display: flex;
-    overflow: hidden;
-    transition: transform 0.5s ease-in-out;
-  }
-  
-  /* Form Containers */
-  .form-container {
-    position: absolute;
-    width: 50%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: white;
-    transition: transform 0.5s ease-in-out;
-    padding: 20px;
-  }
-  
-  /* Login and Signup forms */
-  .login {
-    left: 0;
-    transform: translateX(0);
-  }
-  
-  .signup {
-    right: 0;
-    transform: translateX(100%);
-  }
-  
-  /* Move the forms when toggled */
-  .sign-up-mode .login {
-    transform: translateX(-100%);
-  }
-  
-  .sign-up-mode .signup {
-    transform: translateX(0);
-  }
-  
-  /* Right Panel (Blue Section) */
-  .sub-cont {
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(to right, #052d56, #0044cc);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.5s ease-in-out;
-    position: absolute;
-    right: 0;
-  }
-  
-  .sign-up-mode .sub-cont {
-    transform: translateX(-100%);
-  }
-  
-  /* Inputs & Buttons */
-  label {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    margin: 10px 0;
-  }
-  
-  input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-top: 5px;
-    width: 100%;
-  }
-  button {
-    background:  #0044cc;
-    color: white;
-    border: 2px solid transparent;
-    padding: 12px 24px;
-    margin-top: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0px 4px 6px rgba(0, 115, 230, 0.3);
-  }
-  
-  button:hover {
-    background: #005bb5;
-    border: 2px solid #e7eaed;
-    box-shadow: 0px 6px 10px rgb(243, 245, 247);
-    transform: scale(1.05);
-    border-radius: 20px;
-  }
-  
-  button:active {
-    background: #004494;
-    box-shadow: 0px 2px 4px rgba(0, 91, 181, 0.3);
-    transform: scale(0.98);
-    border-radius: 20px;
-  }
-  
-  
+
+/* Main Container */
+.cont {
+  position: relative;
+  top:40px;
+  width: 700px;
+  height: 400px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 20px 20px 20px rgba(0, 0, 0.2, 0.2);
+  display: flex;
+  overflow: hidden;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Form Containers */
+.form-container {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  transition: transform 0.5s ease-in-out;
+  padding: 35px;
+}
+
+/* Login and Signup forms */
+.login {
+  left: 0;
+  transform: translateX(0);
+}
+
+.signup {
+  right: 0;
+  transform: translateX(100%);
+}
+
+/* Move the forms when toggled */
+.sign-up-mode .login {
+  transform: translateX(-100%);
+}
+
+.sign-up-mode .signup {
+  transform: translateX(0);
+}
+
+/* Right Panel (Blue Section) */
+.sub-cont {
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, #052d56, rgb(92, 115, 159));
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s ease-in-out;
+  position: absolute;
+  right: 0;
+}
+
+.sign-up-mode .sub-cont {
+  transform: translateX(-100%);
+}
+
+/* Inputs & Buttons */
+label {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 15px 0;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 5px;
+  width: 100%;
+}
+
+button {
+  background: #13579a;
+  color: white;
+  border: 2px solid transparent;
+  padding: 12px 24px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out, transform 0.3s ease-in-out;
+  box-shadow: 0px 4px 6px rgba(0, 115, 230, 0.3);
+}
+
+button:hover {
+  background: #005bb5;
+  border: 2px solid #e7eaed;
+  box-shadow: 0px 6px 10px rgb(243, 245, 247);
+  transform: scale(1.05);
+  border-radius: 20px;
+}
+
+button:active {
+  background: #004494;
+  box-shadow: 0px 2px 4px rgba(0, 91, 181, 0.3);
+  transform: scale(0.98);
+  border-radius: 20px;
+}
+
+/* Error Styles */
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+  text-align: left;
+  width: 80%;
+}
+
+/* Toast Styles */
+.toast {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 15px 25px;
+  border-radius: 8px;
+  font-size: 16px;
+  display: none; /* Initially hidden */
+  z-index: 999;
+}
+
+.toast.show {
+  display: block; /* Show the toast when it's triggered */
+}
+
 /* Mobile-specific styles */
 @media (max-width: 768px) {
-    .cont {
-        position: relative;
-        width: 400px;
-        height: 400px;
-        background: #ffffff;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        display: flex;
-        overflow: hidden;
-        transition: none;  
-    }
+  .cont {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    overflow: hidden;
+    transition: none;  
+  }
 
-    .sub-cont {
-        font-size:10px;
-    }
+  .sub-cont {
+    font-size: 10px;
+    padding: 15px;
+  }
 
-    .form {
-        padding: 15px;  
-        min-width: 100%;  
-    }
+  .form {
+    padding: 5px;  
+    min-width: 100%;  
+  }
 
   .form-container {
-    font-size:10px;
+    font-size: 7px;
   }
-  
-    .form h2 {
-        font-size: 10px;  
-    }
+
+  .form h2 {
+    font-size: 10px;  
+  }
+
+  /* Ensure the buttons take full width on mobile */
+  button {
+    width: 100%;
+    padding: 15px 0;
+    font-size: 14px;
+  }
 }
