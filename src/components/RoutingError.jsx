@@ -6,7 +6,7 @@ function RoutingError(err) {
     console.log(err);
   return (
     <div>
-        <h1 className='text-center text-denger'>{err.data}</h1>
+        <h1 className='text-center text-danger'>{err.data}</h1>
         <h2 className='text-center display-3 text-warning'>{err.status}-{err.statusText}</h2>
     </div>
   )

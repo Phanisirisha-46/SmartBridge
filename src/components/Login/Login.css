@@ -137,6 +137,19 @@ button:active {
   display: block; /* Show the toast when it's triggered */
 }
 
+.total {
+  display: flex;
+  flex-direction: row; /* Ensures horizontal alignment */
+  justify-content: left; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  gap: 50px; /* Add spacing between elements */
+  
+}
+.real_image{
+  position:relative;
+  top:30px;
+}
+
 /* Mobile-specific styles */
 @media (max-width: 768px) {
   .cont {
@@ -175,4 +188,54 @@ button:active {
     padding: 15px 0;
     font-size: 14px;
   }
+  .real_image {
+  display:none;
+  }
+  
+}
+@media (min-width: 600px) and (max-width: 1024px) {
+  /* Styles for tablets */
+ .real_image {
+    height:50px;
+    width:50px;
+
+  }
+  .cont {
+    position: relative;
+    width: 500px;
+    height: 400px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    overflow: hidden;
+    transition: none;  
+  }
+
+  .sub-cont {
+    font-size: 6px;
+    padding: 10px;
+  }
+
+  .form {
+    padding: 5px;  
+    min-width: 100%;  
+  }
+
+  .form-container {
+    font-size: 8px;
+  }
+
+  .form h2 {
+    font-size: 10px;  
+  }
+
+ 
+  button {
+    width: 100%;
+    padding: 15px 0;
+    font-size: 14px;
+  }
+
+
 }

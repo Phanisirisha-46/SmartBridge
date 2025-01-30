@@ -21,6 +21,8 @@ function App() {
           path: '/home', // Child route of Login
           element: <Home/>,
         },
+        
+        
       ],
     },
   ]);

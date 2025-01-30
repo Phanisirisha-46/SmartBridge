@@ -10,6 +10,7 @@ function RootLayout() {
 
   // Function to handle redirection to login page
   const handleLoginClick = () => {
+    
     navigate('/login'); // Assuming '/login' is the route to your login page
   };
 
