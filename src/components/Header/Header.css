@@ -1,10 +1,10 @@
 /* Header container */
 .header {
-    background: linear-gradient(to right, #104173, #7895d0);
+    background: linear-gradient(to right,  #1a2b4d,#164f89);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 30px;
+    padding: 5px 20px;
     flex-wrap: nowrap; /* Ensure elements stay in one row */
     position: relative;
 }

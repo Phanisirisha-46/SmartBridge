@@ -4,6 +4,7 @@ import RoutingError from './components/RoutingError';
 import Login from './components/Login/Login';
 import RootLayout from './RootLayout';
 import Home from './components/Home/Home';
+import Faq from './components/FAQ/Faq';
 
 function App() {
   
@@ -21,7 +22,11 @@ function App() {
           path: '/home', // Child route of Login
           element: <Home/>,
         },
-        
+        {
+          path: '/faq', // Child route of Login
+          element: <Faq/>,
+        },
+
         
       ],
     },

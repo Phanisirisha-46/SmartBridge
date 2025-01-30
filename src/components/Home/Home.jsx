@@ -1,13 +1,62 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Carousel } from "react-bootstrap"; // Import Bootstrap Carousel
 import "bootstrap/dist/css/bootstrap.min.css";
 import collage from "../../assets/collage-removebg-preview.png"; // FIXED IMPORT
 import m from "../../assets/men-removebg-preview.png";
 import help from "../../assets/help-removebg-preview.png";
+import { MdPersonAdd } from "react-icons/md"; 
+import "./Home.css";
+import steps from "../../assets/steps.png";
+import  Faq from '../../components/FAQ/Faq';
 
 function Home() {
+  useEffect(() => {
+    // Function to animate numbers
+    const animateNumbers = () => {
+      const stats = document.querySelectorAll('.stat-number');
+      stats.forEach(stat => {
+        const target = +stat.getAttribute('data-target'); // Final number
+        const duration = 2000; // Total animation time in milliseconds
+        const interval = 30; // Time between updates in milliseconds
+        const increment = Math.ceil(target / (duration / interval)); // Increment per interval
+        let current = 0;
+
+        const updateNumber = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            stat.textContent = target.toLocaleString(); // Format number with commas
+            clearInterval(updateNumber); // Stop the interval
+          } else {
+            stat.textContent = current.toLocaleString();
+          }
+        }, interval);
+      });
+    };
+      // Start animation on component mount
+      animateNumbers();
+    }, []);
+
+  const [hovered, setHovered] = useState(false);
+
+  const imageStyle = {
+    maxWidth: "100%",
+    height: "auto",
+    width: "400px",
+    transition: "all 0.3s ease-in-out",
+    transform: hovered ? "scale(0.9)" : "scale(1)",
+    boxShadow: hovered ? "0 4px 8px rgba(0, 0, 0, 0.2)" : "none"
+  };
+
   return (
+
     <div className="container mt-5">
+      {/* Add Mentor Button */}
+      <div className="text-center mb-4">
+        <button className="btn btn-success">
+          <MdPersonAdd className="me-2" /> Add as a Mentor
+        </button>
+      </div>
+
       <div className="row">
         {/* Card 1 */}
         <div className="col-sm-6">
@@ -45,9 +94,32 @@ function Home() {
         </div>
       </div>
 
+     
+    
+      <div className="stats-container">
+      <div className="stats-card">
+        <div className="stat">
+          <span className="stat-number" data-target="95">0</span>%
+          <p>Happy Members</p>
+        </div>
+        <div className="stat">
+          <span className="stat-number" data-target="100">0</span>%
+          <p>Expert Mentors</p>
+        </div>
+        <div className="stat">
+          <span className="stat-number" data-target="500">0</span>+
+          <p>Active Users</p>
+        </div>
+      </div>
+    </div>
+
+
+      
+      
+
       {/* Features Section */}
       <br /><br />
-      <div className="text-center">
+      <div id="features" className="text-center">
         <h2 className="card-title" style={{ color: "rgb(30, 83, 136)" }}>Features</h2>
         <h3 className="card-text text-blue">What you can do by signing up to the platform here?</h3>
       </div>
@@ -56,7 +128,7 @@ function Home() {
       <div className="container mt-5">
         <div className="row">
           {/* Feature Cards */}
-          {[
+          {[ 
             { title: "Why Choose Mentor?", text: "A mentor brings years of experience, offering valuable insights and knowledge." },
             { title: "Find Mentor with your interest", text: "Explore the network of seasoned mentors, ready to illuminate your career path." },
             { title: "Continuous Learning and Development", text: "Embark on a journey of continuous growth through curated resources and tailored learning paths." },
@@ -65,7 +137,7 @@ function Home() {
             { title: "Enhance Skills with Industry Experts", text: "Elevate your skills and knowledge by learning directly from industry experts." }
           ].map((feature, index) => (
             <div className="col-sm-6 mb-4" key={index}>
-              <div className="card">
+              <div className="card"  style={{ boxShadow: "0 4px 8px rgba(0, 0, 139, 0.5)" }}>
                 <div className="card-body first">
                   <h2 className="card-title" style={{ color: "rgb(30, 83, 136)" }}>{feature.title}</h2>
                   <br />
@@ -77,31 +149,72 @@ function Home() {
         </div>
       </div>
 
+      {/* Image Section with Hover Effect */}
       <div className="row justify-content-center">
-  <div className="text-center">
-    <img 
-      src={m}  
-      alt="Collage Section"
-      className="img-fluid px-3 rounded-5 image-hover-effect" 
-      style={{ maxWidth: "100%", height: "auto", width: "400px" }} 
+        <div className="text-center">
+          <img
+            src={m}
+            alt="Collage Section"
+            className="img-fluid px-3 rounded-5 image"
+            style={imageStyle}
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
+          />
+          <img
+            src={collage}
+            alt="Collage Section"
+            className="img-fluid px-3 rounded image"
+            style={imageStyle}
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
+          />
+          <img
+            src={help}
+            alt="Collage Section"
+            className="img-fluid px-3 rounded-4 image"
+            style={imageStyle}
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
+          />
+        </div>
+      </div>
+     
+        <br/><br/>
+        <div className="card">
+  <div className="image-container">
+    <img
+      src="https://som.georgetown.edu/wp-content/uploads/2022/07/student-advising.png"
+      alt="Notebook"
+      className="img-fluid"
     />
-    <img 
-      src={collage}  
-      alt="Collage Section"
-      className="img-fluid px-3 rounded image-hover-effect"  
-      style={{ maxWidth: "100%", height: "auto", width: "400px" }} 
-    />
-    <img 
-      src={help}  
-      alt="Collage Section"
-      className="img-fluid px-3 rounded-4 image-hover-effect"  
-      style={{ maxWidth: "100%", height: "auto", width: "400px" }} 
-    />
+    <div className="content">
+      <p>
+        Smart Bridge helps the whole world by bridging the gap between IT and various sectors, enabling innovation, efficient problem-solving, and enhancing global connectivity. It empowers individuals and organizations through technology-driven solutions, fostering collaboration and progress worldwide.
+      </p>
+    </div>
   </div>
 </div>
 
 
-
+      
+          <br /><br />
+      <div id="steps" className="text-center">
+        <h2 className="card-title" style={{ color: "rgb(30, 83, 136)" }}>Steps</h2>
+        <h3 className="card-text text-blue">What are the steps to Follow?</h3>
+      </div>
+          <br/>
+    <div className="card">
+  <div className="gud">
+    <img
+      src={steps}
+      alt="Notebook"
+      className="img-fluid"
+    />
+  </div>
+</div>
+<br/><br/>
+          <Faq/>
+<br/><br/>
 
     </div>
   );
