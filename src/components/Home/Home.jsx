@@ -10,6 +10,7 @@ import steps from "../../assets/steps.png";
 import  Faq from '../../components/FAQ/Faq';
 import Books from '../../components/Books/Books';
 
+
 function Home() {
   useEffect(() => {
     // Function to animate numbers
