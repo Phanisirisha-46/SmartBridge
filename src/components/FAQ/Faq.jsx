@@ -21,7 +21,7 @@ function Faq() {
     <div className="accordion w-100" id="basicAccordion">
       <div className="card">
         <div className="card-header">
-          <h2>FAQs - SmartBridge - One:One Mentoring</h2>
+        <h2 className="text-white">FAQs - SmartBridge - One:One Mentoring</h2>
         </div>
 
         {/* FAQ 1 */}

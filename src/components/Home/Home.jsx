@@ -8,6 +8,7 @@ import { MdPersonAdd } from "react-icons/md";
 import "./Home.css";
 import steps from "../../assets/steps.png";
 import  Faq from '../../components/FAQ/Faq';
+import Books from '../../components/Books/Books';
 
 function Home() {
   useEffect(() => {
@@ -214,8 +215,8 @@ function Home() {
 </div>
 <br/><br/>
           <Faq/>
-<br/><br/>
 
+          <Books/>
     </div>
   );
 }

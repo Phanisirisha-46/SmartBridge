@@ -5,6 +5,7 @@ import Login from './components/Login/Login';
 import RootLayout from './RootLayout';
 import Home from './components/Home/Home';
 import Faq from './components/FAQ/Faq';
+import Aboutus from './components/Aboutus/Aboutus';
 
 function App() {
   
@@ -26,6 +27,12 @@ function App() {
           path: '/faq', // Child route of Login
           element: <Faq/>,
         },
+        
+        {
+          path: '/aboutus', // Child route of Login
+          element: <Aboutus/>,
+        },
+       
 
         
       ],
