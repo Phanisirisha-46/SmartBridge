@@ -5,7 +5,6 @@ import "react-toastify/dist/ReactToastify.css";
 import "./Login.css";
 import logo from "../../assets/logo.png";
 
-
 const Login = () => {
     const [isSignUp, setIsSignUp] = useState(false);
     const [formData, setFormData] = useState({
@@ -39,7 +38,7 @@ const Login = () => {
         return newErrors;
     };
 
-    const handleSubmit = async (e, isSignUpForm) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         const validationErrors = validate();
         if (Object.keys(validationErrors).length > 0) {
@@ -47,41 +46,12 @@ const Login = () => {
             return;
         }
 
-        try {
-            let url = "http://localhost:4000/profiles-api/profiles/login"; // Backend API URL
-            const response = await fetch(url, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    username: formData.username,
-                    password: formData.password,
-                }),
-            });
+        // Simulate success without backend
+        toast.success("Form submitted successfully!");
 
-            const data = await response.json();
-
-            if (response.ok && data.message === "Login Success") {
-                toast.success("Login successful!");
-
-                // Store token and user data in localStorage or cookies
-                localStorage.setItem("token", data.token);
-                localStorage.setItem("profile", JSON.stringify(data.profile));
-
-                setErrors({});
-
-                // Redirect to home page after successful login
-                setTimeout(() => {
-                    navigate("/home");
-                }, 2000);
-            } else {
-                toast.error(data.message); // Show backend error message
-            }
-        } catch (error) {
-            console.error("Login error:", error);
-            toast.error("An error occurred. Please try again.");
-        }
+        // Store user data in local state or navigate
+        setErrors({});
+        navigate("/home");
     };
 
     const handleChange = (e) => {
@@ -96,7 +66,7 @@ const Login = () => {
                 {!isSignUp && (
                     <div className="form-container login">
                         <h2>Login</h2>
-                        <form onSubmit={(e) => handleSubmit(e, false)}>
+                        <form onSubmit={handleSubmit}>
                             <label>
                                 Email
                                 <input
@@ -134,7 +104,7 @@ const Login = () => {
                 {isSignUp && (
                     <div className="form-container signup">
                         <h2>Sign Up</h2>
-                        <form onSubmit={(e) => handleSubmit(e, true)}>
+                        <form onSubmit={handleSubmit}>
                             <label>
                                 Username
                                 <input
