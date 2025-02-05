@@ -4,14 +4,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 20px;
+    padding: 1px 15px;
     flex-wrap: nowrap; /* Ensure elements stay in one row */
     position: relative;
 }
 
 /* Title Styling */
 .header h1 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     margin: 0;
     flex: 1; /* Allows the title to take up available space */
     color: white;

@@ -17,7 +17,7 @@ function Header() {
       <ul className='nav fs-5 p-3'>
       <li>
           <Link to="/home" className='nav-link text-white'>
-            <FaHome className='fs-4 text-dark' />Home
+            <FaHome className='fs-5 text-dark' />  Home
           </Link>
         </li>
         <li>
@@ -29,7 +29,7 @@ function Header() {
       document.getElementById("features").scrollIntoView({ behavior: "smooth" });
     }}
   >
-    <TiHome className='fs-4 text-dark' /> Features
+    <TiHome className='fs-5 text-dark' /> Features
   </a>
 </li>
 
@@ -47,7 +47,7 @@ function Header() {
       document.getElementById("steps").scrollIntoView({ behavior: "smooth" });
     }}
   >
-    <IoMdBook className='fs-4 text-dark' /> Steps
+    <IoMdBook className='fs-5 text-dark' /> Steps
   </a>
 </li>
 
@@ -58,7 +58,7 @@ function Header() {
         </li>
         <li className='nav-item'>
           <Link to="/profile" className='nav-link text-white'>
-            <FaUserAlt className='fs-4 text-black' /> Profile
+            <FaUserAlt className='fs-5 text-black' /> Profile
           </Link>
         </li>
       </ul>

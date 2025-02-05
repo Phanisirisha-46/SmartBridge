@@ -27,7 +27,7 @@ function RootLayout() {
             <button 
                 className="login-button" 
                 onClick={handleLoginClick}>
-                Login/SigUp
+                Login/SignUp
             </button>
           </div>
         )}
